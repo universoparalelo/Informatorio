@@ -1,0 +1,71 @@
+
+
+class Usuario:
+    def __init__(self, id, nombre, apellido, telefono, username, email, contrasena, f_registro, avatar, estado, online):
+        self.id = id
+        self.nombre = nombre
+        self.apellido = apellido
+        self.telefono = telefono
+        self.username = username
+        self.email = email
+        self.contrasena = contrasena
+        self.f_registro = f_registro
+        self.avatar = avatar
+        self.estado = estado
+        self.online = online
+        self.usuarios = []
+
+    def login():
+        pass
+
+    def registrar():
+        pass
+        
+
+class Publico(Usuario):
+    def __init__(self, id, nombre, apellido, telefono, username, email, contrasena, f_registro, avatar, estado, online, es_publico):
+        super().__init__(id, nombre, apellido, telefono, username, email, contrasena, f_registro, avatar, estado, online)
+        self.es_publico = es_publico
+
+    def registrar():
+        pass
+
+    def comentar():
+        pass
+
+
+class Colaborador(Usuario):
+    def __init__(self, id, nombre, apellido, telefono, username, email, contrasena, f_registro, avatar, estado, online, es_publico):
+        super().__init__(id, nombre, apellido, telefono, username, email, contrasena, f_registro, avatar, estado, online)
+        self.es_publico = es_publico
+
+    def registrar():
+        pass
+
+    def comentar():
+        pass
+
+    def publicar():
+        pass
+
+class Articulo:
+    def __init__(self, id, id_usuario, titulo, resumen, contenido, f_publicacion, imagen, estado):
+        self.id = id
+        self.id_usuario = id_usuario
+        self.titulo = titulo
+        self.resumen = resumen
+        self.contenido = contenido
+        self.f_publicacion = f_publicacion
+        self.imagen = imagen
+        self.estado = estado
+    
+
+class Comentario:
+    def __init__(self, id, id_articulo, id_usuario, contenido, fecha_hora, estado):
+        self.id = id 
+        self.id_articulo = id_articulo
+        self.id_usuario = id_usuario
+        self.contenido = contenido
+        self.fecha_hora = fecha_hora
+        self.estado = estado
+
