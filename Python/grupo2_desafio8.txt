@@ -1,34 +1,61 @@
-
+# creamos un objeto Publico --> publico1
+# lo registramos --> publico1.registrar
+# la funcion principal esta en usuario
 
 class Usuario:
-    def __init__(self, id, nombre, apellido, telefono, username, email, contrasena, f_registro, avatar, estado, online):
+    def __init__(self, nombre, apellido, telefono, username, email, contraseña, f_registro, avatar, estado, online):
         self.id = id
         self.nombre = nombre
         self.apellido = apellido
         self.telefono = telefono
         self.username = username
         self.email = email
-        self.contrasena = contrasena
+        self.contrasena = contraseña
         self.f_registro = f_registro
         self.avatar = avatar
         self.estado = estado
         self.online = online
+        self.es_publico = False
+        self.es_colaborador = False
         self.usuarios = []
 
-    def login():
-        pass
+    def login(self, username, contraseña):
+        for usuario in self.usuarios:
+            if usuario.username == username:
+                if usuario.contraseña == contraseña:
+                    print(f"Bienvenido {username}!")
+                    self.online = True
+                    break
+        print("Contraseña o nombre de usuario incorrecto")
+        
 
-    def registrar():
-        pass
+    def registrar(self):
+        bandera = True
+        for usuario in self.usuarios:
+           if self.username == usuario.username:
+               print("El username esta repetido")
+               bandera = False
+               break
+        if bandera: 
+            print("Se registro correctamente")
+            self.usuarios.append()
+            return True
+        else: 
+            return False
+        
         
 
 class Publico(Usuario):
-    def __init__(self, id, nombre, apellido, telefono, username, email, contrasena, f_registro, avatar, estado, online, es_publico):
-        super().__init__(id, nombre, apellido, telefono, username, email, contrasena, f_registro, avatar, estado, online)
+    def __init__(self, nombre, apellido, telefono, username, email, contrasena, f_registro, avatar, estado, online, es_publico):
+        super().__init__(id, nombre, apellido, telefono, username, email, contrasena, f_registro, avatar, estado, online, es_publico)
         self.es_publico = es_publico
+        self.publicos = []
 
-    def registrar():
-        pass
+    def registrar(self, usuarioNuevo):
+        if super().registrar(usuarioNuevo):
+            print("Se registro correctamente")
+            self.publicos.append(usuarioNuevo)
+        
 
     def comentar():
         pass
@@ -38,9 +65,10 @@ class Colaborador(Usuario):
     def __init__(self, id, nombre, apellido, telefono, username, email, contrasena, f_registro, avatar, estado, online, es_publico):
         super().__init__(id, nombre, apellido, telefono, username, email, contrasena, f_registro, avatar, estado, online)
         self.es_publico = es_publico
+        self.colaboradores = []
 
-    def registrar():
-        pass
+    def registrar(self):
+        super().registrar()
 
     def comentar():
         pass
@@ -69,3 +97,9 @@ class Comentario:
         self.fecha_hora = fecha_hora
         self.estado = estado
 
+publico1 = Publico('Celeste', 'fdas', '4321', 'fdsa', 'fdas@fd', 'fdas', '4321', 'fdsafd', True, False, True)
+publico1.registrar()
+
+usuario1 = Usuario()
+publico1 = Publico()
+usuario1.registrar(publico1)
