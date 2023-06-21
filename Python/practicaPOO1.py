@@ -538,3 +538,5 @@ class Mate:
 # mate1.beber()
 # mate1.cebar()
 # mate1.beber()
+from datetime import datetime
+print(datetime.today())
