@@ -1,0 +1,31 @@
+instalacion de Django
+
+1. creo una carpeta solo para Django
+2. me dirijo hacia la carpeta en el cmd
+3. instalo virtualenv
+    pip install virtualenv
+4. creo el entorno
+    virtualenv <nombreDelEntorno>
+5. me digijo hacia la carpeta para Django
+    cd .. (la cantidad de veces necesario)
+6. entro al entorno
+    cd <nombreDelEntorno>
+7. entro a los scripts
+    cd Scripts
+8. activo el entorno
+    activate
+9. salgo de Scripts y me posiciono en la carpeta de Django
+10. creo una carpeta para un proyecto
+    mkdir <nombreProyecto>
+11. instalo Django
+    pip install django
+si quiero una version especifica
+    pip install django==4.2
+12. entro al repositorio
+    cd <nombreProyecto>
+13. activar el administrador
+    django-admin startproyect proyectoFinal
+14. corriendo el server de django
+    python manage.py runserver
+
+listo
