@@ -1,16 +1,43 @@
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <script src="{% static 'js/main.js' %}"></script>
     <title>Formulario</title>
 </head>
 <body>
-    <form action="">
-        <div>
-            {% block contenido %}
-            <h1>Esta es la seccion 1</h1>
-            {% endblock contenido %}
-        </div>
+    <form id="formulario">
+        {% block contenido %}
+        <div id="seccion1" class="seccion step active">
+            <h2>Sección 1: Datos personales</h2>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required><br>
+      
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" required><br>
+      
+            <label for="provincia">Provincia:</label>
+            <select id="provincia" name="provincia" required>
+              <option value="">Seleccionar</option>
+              <option value="Chaco">Chaco</option>
+              <option value="Santa Fe">Santa Fe</option>
+              <option value="Corrientes">Corrientes</option>
+            </select><br>
+      
+            <label for="localidad">Localidad:</label>
+            <input type="text" id="localidad" name="localidad" required><br>
+      
+            <label for="cantidadProducto">Cantidad de productos: </label>
+            <input type="number" min="1" max="5" value="1">
+            <br>
+      
+            <div class="button">
+              <a href="{% url 'Seccion2' %}">Siguiente</a>
+            </div>
+          </div>
+        {% endblock contenido %} 
     </form>
 </body>
 </html>

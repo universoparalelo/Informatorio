@@ -1,0 +1,90 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    font-family: Arial, sans-serif;
+}
+
+/* .step {
+    display: none;
+} */
+.step.active {
+    display: block;
+}
+
+#formulario {
+    margin: 10px;
+    padding: 10px;
+}
+
+.step {
+    background-color: #ffffff;
+    max-width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: #336699 solid 2px;
+}
+
+@media screen and (max-width: 767px) {
+    /* Estilos para dispositivos móviles con un ancho máximo de 767px */
+    .step {
+    max-width: 100%;
+    margin: 0 0;
+    }
+}
+
+.step h2 {
+    color: #336699;
+}
+
+.step input[type="text"],
+.step input[type="date"],
+.step input[type="file"],
+.step input[type="number"],
+.step select {
+    border: 1px solid #336699;
+    border-radius: 4px;
+    padding: 8px;
+    margin: 5px auto;
+}
+
+/* button, 
+button[type="submit"] {
+    background-color: #336699;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 20px 10px auto auto;
+} */
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4e8cff;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    margin: 5px 15px;
+    }
+    
+.button:hover {
+    background-color: #3a6dbf;   
+}
+
+.button a {
+    color: inherit;
+    text-decoration: none;
+}
+      
+    
+    

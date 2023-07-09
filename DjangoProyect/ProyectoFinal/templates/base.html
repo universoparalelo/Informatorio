@@ -1,11 +1,10 @@
 {% load static %}
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/main.css' %}">
-    <title>Document</title>
+    <link rel="stylesheet" type='text/css' href="{% static 'css/main.css' %}">
+    <title>Proyecto Final con Django</title>
 </head>
 <body>
     <div class="principal">
@@ -16,6 +15,7 @@
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'segunda' %}">Segunda pagina</a></li>
             <li><a href="{% url 'tercera' %}">Tercera pagina</a></li>
+            <li><a href="{% url 'productos:catalogo' %}">Catalogo</a></li>
         </ul>
     </div>
     {% block contenido %}

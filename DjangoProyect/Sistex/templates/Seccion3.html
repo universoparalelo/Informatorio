@@ -1,0 +1,66 @@
+{% extends 'Seccion1.html' %}
+
+
+{% block contenido %}
+<div id="seccion3" class="seccion step">
+    <h2>Sección 3: Análisis químicos que requiere</h2>
+
+    <label for="analisisFisicoquimico">Análisis Fisicoquímico $2000:</label>
+    <input type="checkbox" id="analisisFisicoquimico" name="analisisFisicoquimico" onclick="mostrarFisico(); precioTotal('analisisFisicoquimico', 2000)"><br>
+
+    <div id="datosAnalisisFisicoquimico" hidden>
+      <label for="pdfAnalisisFisicoquimico">Si es su primera vez analizando con nosotros:</label>
+      <input type="file" id="analisisPDF">
+    </div>
+
+    <label for="analisisMicrobiologico">Análisis Microbiológico:</label>
+    <input type="checkbox" id="analisisMicrobiologico" onclick="mostrarMicro()"><br>
+    <div id="datosAnalisisMicrobiologico" hidden>
+      <label>Opciones:</label><br>
+      
+        <input type="radio" name="aM" class="opciones" id="aerobiasMesofilas" onclick="precioTotal('aerobiasMesofilas',1500)">
+        <label for="aerobiasMesofilas">Aerobias Mesófilas $1500</label><br>
+  
+        <input type="radio" name="aM" class="opciones" id="coliformesEcoli" onclick="precioTotal('coliformesEcoli',2000)">
+        <label for="coliformesEcoli">Coliformes Totales/E.Coli $2000</label><br>
+      
+        <input type="radio" name="aM" class="opciones" id="salmonella" onclick="precioTotal('salmonella',2500)">
+        <label for="salmonella">Salmonella $2500</label><br>
+      
+        <input type="radio" name="aM" class="opciones" id="pseudomonaAeruginosa" onclick="precioTotal('pseudomonaAeruginosa',3000)">
+        <label for="pseudomonaAeruginosa">Pseudomona aeruginosa $3000</label><br>
+      
+        <input type="radio" name="aM" class="opciones" id="bacteriasLacticas" onclick="precioTotal('bacteriasLacticas',2500)">
+        <label for="bacteriasLacticas">Bacterias Lácticas $2500</label><br>
+      
+        <input type="radio" name="aM" class="opciones" id="enterobacterias" onclick="precioTotal('enterobacterias',2000)">
+        <label for="enterobacterias">Enterobacterias $2000</label><br>
+      
+        <input type="radio" name="aM" class="opciones" id="staphylococcusAureus" onclick="precioTotal('staphylococcusAureus',2500)">
+        <label for="staphylococcusAureus">Staphylococcus aureus $2500</label><br>
+      
+        <input type="radio" name="aM" class="opciones" id="hongosLevaduras" onclick="precioTotal('hongosLevaduras',2000)">
+        <label for="hongosLevaduras">Hongos y Levaduras $2000</label><br>
+      
+    </div>
+
+    <label for="determinacionNutricional">Determinación de información nutricional $1500:</label>
+    <input type="checkbox" id="determinacionNutricional" onclick="precioTotal('determinacionNutricional',1500)"><br>
+
+    <label for="azucaresTotales">Azúcares Totales $2000:</label>
+    <input type="checkbox" id="azucaresTotales" onclick="precioTotal('azucaresTotales',2000)"><br>
+
+    <!-- <div id="precioTotal">
+      <label for="precioTotalCampo">Precio total:</label>
+      <input type="text" id="precioTotalCampo" value="0" readonly>
+    </div><br> -->
+
+    <div class="button">
+        <a href="{% url 'Seccion2' %}">Anterior</a>
+    </div>
+    <div class="button">
+        <a href="{% url 'Seccion4' %}">Siguiente</a>
+    </div>
+  </div>
+    
+{% endblock contenido %}

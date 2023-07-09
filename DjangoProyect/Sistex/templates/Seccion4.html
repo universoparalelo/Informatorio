@@ -1,0 +1,20 @@
+{% extends 'Seccion1.html' %}
+{% load static %}
+
+{% block contenido %}
+<div id="seccion4" class="seccion step">
+    <h2>Sección 4: Realizar pago</h2>
+    <img src="{% static 'img/imagen.jpeg' %}" alt="Imagen con Datos de la cuenta corriente a enviar el dinero"><br>
+
+    <label for="comprobante">Cargar comprobante de pago:</label>
+    <input type="file" id="comprobante" required>
+
+    <div class="button">
+        <a href="{% url 'Seccion3' %}">Anterior</a>
+    </div>
+    <div class="button">
+        <a href="">Enviar</a>
+    </div>
+  </div>
+    
+{% endblock contenido %}
