@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" type='text/css' href="{% static 'css/main.css' %}">
     <title>Proyecto Final con Django</title>
 </head>
@@ -16,6 +17,19 @@
             <li><a href="{% url 'segunda' %}">Segunda pagina</a></li>
             <li><a href="{% url 'tercera' %}">Tercera pagina</a></li>
             <li><a href="{% url 'productos:catalogo' %}">Catalogo</a></li>
+        </ul>
+        <ul>
+            <li>
+            {% if user.is_authenticated %}
+            {{user.username}} LOGEADO
+            <a href="{% url 'logout' %}">Salir</a>
+            {% else %}
+            <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'usuarios:registrar' %}">Registrarse</a>
+            {% endif %}
+            </li>
+            <a href="{% url 'noticias:CrearNoticia' %}">Crear Noticia</a>
+            <a href="{% url 'noticias:listar_noticias' %}">LISTAR</a>
         </ul>
     </div>
     {% block contenido %}

@@ -28,6 +28,7 @@
 
 body{
     background-color: #1b1f22;
+    color: #fff;
 }
 
 img{
@@ -36,18 +37,26 @@ img{
 
 .header{
     background-color: #9461fb;
-    padding: 5px;
+    padding: 10px;
 }
 
 a{
     text-decoration: none;
-    color: white;
-    font-size: 18px;
+    color: #fff;
+    font-size: 16px;
 }
-
-
 
 .header-item:hover{
     background-color: #712cf9;
     border-radius: 30px;
+}
+
+.cards{
+    height: 300px;
+    /* border: #fff solid 2px; */
+}
+
+.p-3{
+    height: 300px;
+    border: #fff solid 2px;
 }
