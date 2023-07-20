@@ -19,17 +19,16 @@
             <li><a href="{% url 'productos:catalogo' %}">Catalogo</a></li>
         </ul>
         <ul>
-            <li>
             {% if user.is_authenticated %}
-            {{user.username}} LOGEADO
-            <a href="{% url 'logout' %}">Salir</a>
+                {{user.username}} LOGEADO
+                <li><a href="{% url 'logout' %}">Salir</a></li>
             {% else %}
-            <a href="{% url 'login' %}">Login</a>
-            <a href="{% url 'usuarios:registrar' %}">Registrarse</a>
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'usuarios:registrar' %}">Registrarse</a></li>
             {% endif %}
-            </li>
-            <a href="{% url 'noticias:CrearNoticia' %}">Crear Noticia</a>
-            <a href="{% url 'noticias:listar_noticias' %}">LISTAR</a>
+                <li><a href="{% url 'noticias:CrearNoticia' %}">Crear Noticia</a></li>
+                <li><a href="{% url 'noticias:listar_noticias' %}">LISTAR</a></li>
+                <li><a href="{% url 'noticias:categorias' %}">Ver categorias</a></li>
         </ul>
     </div>
     {% block contenido %}

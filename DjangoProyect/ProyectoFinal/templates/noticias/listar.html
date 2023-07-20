@@ -7,6 +7,7 @@
     <div class="row mt-3">
       <div class="col-md-9 mx-auto mb-5">
       	{% for n in object_list %}
+		<a href="{% url 'noticias:detalle_noticia' n.pk %}">
       		<div>
       			<h4>CATEGORIA: {{n.categoria}}</h4>
       			<h4>FECHA: {{n.creado}}</h4>
@@ -16,6 +17,7 @@
       			<h4>AUTOR: {{n.autor}}</h4>
       			<hr>
       		</div>
+		</a>
       	{% endfor %}
 
       </div>
